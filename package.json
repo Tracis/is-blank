@@ -1,0 +1,38 @@
+{
+  "name": "is-blank",
+  "version": "0.0.1",
+  "description": "is-blank",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf lib dist es",
+    "build": "npm run clean && npm run build:commonjs && npm run build:es",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib --extensions \".ts,.tsx,.js\" --ignore */**/*.d.ts,**/**/*.test.ts",
+    "build:es": "BABEL_ENV=es babel src --out-dir es  --extensions \".ts,.tsx,.js\" --ignore */**/*.d.ts,**/**/*.test.ts"
+  },
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist",
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.nie.netease.com/sedan/is-blank"
+  },
+  "author": "Tracis",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-loader": "^8.0.6",
+    "rimraf": "^2.6.3",
+    "webpack": "^4.38.0"
+  }
+}
