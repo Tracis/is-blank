@@ -1,15 +1,27 @@
-一些通用的工具方法
+isBlank
 =============
 
-## 1. 脚本
+## Installation
 
-### 1.1. 打包
-
-```js
-npm run build
+```sh
+npm i -S @sedan-utils/is-blank
 ```
 
-## 2. 开发
+## Usage
 
-- `src`目录是源代码
-- `src`中的`d.ts`是每个文件的声明文件, 最后从`index.d.ts`中导出
+```js
+import isBlank from '@sedan-utils/is-blank'
+
+// true
+isBlank([])
+isBlank({})
+isBlank(null)
+isBlank(undefined)
+isBlank('')
+isBlank('    ')
+
+
+// false
+isBlank(0)
+isBlank(false)
+```
