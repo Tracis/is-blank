@@ -1,6 +1,8 @@
 isBlank
 =============
 
+isBlank is a package like Ruby [blank?](https://apidock.com/rails/Object/blank%3F).
+
 ## Installation
 
 ```sh
@@ -19,9 +21,14 @@ isBlank(null)
 isBlank(undefined)
 isBlank('')
 isBlank('    ')
+isBlank('\n\t\r')
+isBlank(function () {})
 
 
 // false
 isBlank(0)
+isBlank(100)
 isBlank(false)
+isBlank(true)
+isBlank(function (a) {})
 ```

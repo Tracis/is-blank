@@ -2,33 +2,28 @@ export interface IIsBlnak {
   (value?: any): boolean;
 }
 
-const isBlnak: IIsBlnak = function (data: any) {
-  const dataType = typeof (data);
-  if (dataType == 'number') {
-    if (Number.isNaN(data)) {
+const isBlnak: IIsBlnak = function (value: any) {
+  const valueType = typeof value;
+  if (value == undefined) {
+    return true
+  } else if (valueType === "number" || valueType === "boolean") {
+    if (Number.isNaN(value) || value === false) {
       return true;
-    }
-    return false;
-  }
-  if (dataType == 'boolean') {
-    return false;
-  }
-  if (dataType == 'undefined' || data === null) {
-    return true;
-  }
-  if (typeof (data.length) != 'undefined') {
-    // [""]也会被判断位空
-    // 是否是空字符串
-    if (/^[\s]*$/.test(data.toString())) {
-      return true;
-    }
-    return data.length == 0;
-  }
-  for (let i in data) {
-    if (data.hasOwnProperty(i)) {
+    } else {
       return false;
     }
-  }
+  } else if (typeof value.length != "undefined") {
+    if (/^[\s]*$/.test(value.toString())) {
+      return true;
+    }
+    return value.length === 0;
+  } else {
+    for (let i in value) {
+      if (value.hasOwnProperty(i)) {
+        return false;
+      }
+    }
+  };
   return true;
 }
 
