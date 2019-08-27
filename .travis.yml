@@ -1,14 +1,14 @@
 language: node_js
 node_js:
 - 10
-- 11
-- 12
 notifications:
   email:
     recipients:
     - tracisnew@163.com
     on_success: change
     on_failure: always
+before_deploy:
+  - npm run build
 deploy:
   - provider: npm
     email: tracisnew@163.com
