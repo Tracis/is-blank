@@ -6,7 +6,7 @@ exports["default"] = void 0;
 var isBlank = function isBlank(value) {
   var valueType = typeof value;
 
-  if (value == undefined) {
+  if (value === undefined || value === null) {
     return true;
   } else if (valueType === "number" || valueType === "boolean") {
     if (Number.isNaN(value) || value === false) {
@@ -14,7 +14,7 @@ var isBlank = function isBlank(value) {
     } else {
       return false;
     }
-  } else if (typeof value.length != "undefined") {
+  } else if (typeof value.length !== "undefined") {
     if (/^[\s]*$/.test(value.toString())) {
       return true;
     }
@@ -28,7 +28,6 @@ var isBlank = function isBlank(value) {
     }
   }
 
-  ;
   return true;
 };
 

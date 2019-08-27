@@ -45,11 +45,6 @@
     "url": "https://github.com/Tracis/is-blank/issues"
   },
   "homepage": "https://github.com/Tracis/is-blank#readme",
-  "dependencies": {
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.3"
-  },
   "keywords": [
     "isBlank"
   ],
