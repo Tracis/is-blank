@@ -1,8 +1,8 @@
-export interface IIsBlnak {
+export interface IisBlank {
   (value?: any): boolean;
 }
 
-const isBlnak: IIsBlnak = function (value: any) {
+const isBlank: IisBlank = function (value: any) {
   const valueType = typeof value;
   if (value == undefined) {
     return true
@@ -27,4 +27,4 @@ const isBlnak: IIsBlnak = function (value: any) {
   return true;
 }
 
-export default isBlnak;
+export default isBlank;
