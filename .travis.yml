@@ -6,14 +6,22 @@ node_js:
 notifications:
   email:
     recipients:
-      - tracisnew@163.com
-    on_success: change # default: change
-    on_failure: always # default: always
+    - tracisnew@163.com
+    on_success: change
+    on_failure: always
 deploy:
-  provider: npm
-  email: tracisnew@163.com
-  api_key:
-    secure: bamvOp7hMiR82AV7F4SjZ0R4hClqtYcBqIs1uSzx7onafq+70CVCdiN2aBQRnZV1wmcfNUsRo1WFJWrqabXzQmtTbyFRGWkv49aNAGuaGRzZ2owckgdy3ANfNLMtUNQz5u6qOXPB75klnjCNbgvTd9jVkxsOcbsBb+yECLdpwM1ssDLbGKwug6h+zAWDVxViMKH47A0TB+9dStF3tggv/45nkIVbZoFE045zizQd73jKaVxkOPStD3k+dNiu2+tgdlvZKJe/vuEZTt7QmOFq0whuopMF7VSosP0iCwD+H6XUdsnFov0bnRpEq1ZVoMNN71bw5J92bH3iLzJASFZ+lEfwH4uLYzB1eC3O6lMPzViDAav3FFdWlyQuvTXWFIjNZIToKWwXA2FMr15F9QH6mTRx5FCxpT/scUqzLgFagcJAiE9jTMuiU0kmxhzDqpOn93i1tq84xWjHNAfNJY2B5mNR9qYkg/l7+kdajfKOVglVS/ctezD+ia6VPmRcelc9pdSMvPF/utcY4UCvORI1w8eiGEvV/6Z7EVcWSJtGoC+lTdcCFVrFWQiDgyG92sk5UH3ClrhHKSL4JIkGuUuuvr3VZgYzop8t6lHld0fBpZyFJF8SbwKRdzAVSmLWysHwOws+Qd6yMHOnxyMWAE/jExOoY/dCiqINNwVqOEA6zjY=
-  on:
-    tags: true
-    repo: Tracis/is-blank
+  - provider: npm
+    email: tracisnew@163.com
+    api_key:
+      secure: bamvOp7hMiR82AV7F4SjZ0R4hClqtYcBqIs1uSzx7onafq+70CVCdiN2aBQRnZV1wmcfNUsRo1WFJWrqabXzQmtTbyFRGWkv49aNAGuaGRzZ2owckgdy3ANfNLMtUNQz5u6qOXPB75klnjCNbgvTd9jVkxsOcbsBb+yECLdpwM1ssDLbGKwug6h+zAWDVxViMKH47A0TB+9dStF3tggv/45nkIVbZoFE045zizQd73jKaVxkOPStD3k+dNiu2+tgdlvZKJe/vuEZTt7QmOFq0whuopMF7VSosP0iCwD+H6XUdsnFov0bnRpEq1ZVoMNN71bw5J92bH3iLzJASFZ+lEfwH4uLYzB1eC3O6lMPzViDAav3FFdWlyQuvTXWFIjNZIToKWwXA2FMr15F9QH6mTRx5FCxpT/scUqzLgFagcJAiE9jTMuiU0kmxhzDqpOn93i1tq84xWjHNAfNJY2B5mNR9qYkg/l7+kdajfKOVglVS/ctezD+ia6VPmRcelc9pdSMvPF/utcY4UCvORI1w8eiGEvV/6Z7EVcWSJtGoC+lTdcCFVrFWQiDgyG92sk5UH3ClrhHKSL4JIkGuUuuvr3VZgYzop8t6lHld0fBpZyFJF8SbwKRdzAVSmLWysHwOws+Qd6yMHOnxyMWAE/jExOoY/dCiqINNwVqOEA6zjY=
+    on:
+      tags: true
+      repo: Tracis/is-blank
+  - provider: releases
+    api_key:
+      secure: kI0ImOEA77KsrT5mld/j/QNoj268Eh57cvjuSkGhLpFEQ0vqTEiy1a71Ugq/L7l3v8eKqfTLMxCmdy2zculUjeujO3shLUbGvkCa+UouDqAmbZ24Fgy8NZs+12BJJHATvKNYkRAefC1hfJx/igyXDzn9v6J3tR5NBsbXMUyAT6IjfmVpgMZQU04UohX5UFzxMvADZcTZbVCVCJkudgPHAVB2sAF3SbQB6gNWpWCTZj9XXHEFm1zhrgU/3jX0COvlM8zIKaNXFfvPow0Zfj7uRpbaF6iChSF9V7T1arRqfu61YSA6hyMVpIwnyLbmej32gznzkrl5yH9+76CiyjoEC6eicedCPY8srl72EBt7wxjk7A8SVReQuKF3OceibXGRyz9pk72lDd23E/oaMUeGmU5BGN423AgdUD62IdSYfI/RxJIv9cnuEUYNMJ/U4bVL9IVeHmVh04jmJMEVvTEH6770sQdTAsQjf4wvtmr/WdepkWV88ObXV9/cv7/+w6PgNrMlgEcGxB4KAmXC1esQiTCNhjKetH4qdwbTzbXnoACqvkOvleJlKONn47bNYBmHKy5hEyqCl2gM9BnY0ko1RsptzoOqUx6/4BalEQLbmLkI0l7V4ynalZ8xZ5B8WHhvA3T6dW7SKmvbRvnUBjD9BaHfrA0erdLkIzKwvCR9YeE=
+    file: "lib/*"
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: Tracis/is-blank
