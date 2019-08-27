@@ -7,6 +7,8 @@
   "typings": "./index.d.ts",
   "scripts": {
     "test": "jest",
+    "cover": "jest --coverage",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "tslint --project tsconfig.json",
     "clean": "rimraf lib dist es",
     "build": "npm run clean && npm run build:commonjs && npm run build:es",
@@ -17,7 +19,6 @@
     "lib",
     "es",
     "src",
-    "dist",
     "index.d.ts"
   ],
   "repository": {
@@ -34,6 +35,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.15",
     "babel-loader": "^8.0.6",
+    "coveralls": "^3.0.6",
     "jest": "^24.8.0",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
