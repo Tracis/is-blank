@@ -1,11 +1,14 @@
 language: node_js
 node_js:
-- 7
-- 8
-- 9
 - 10
 - 11
 - 12
+notifications:
+  email:
+    recipients:
+      - tracisnew@163.com
+    on_success: change # default: change
+    on_failure: always # default: always
 deploy:
   provider: npm
   email: tracisnew@163.com
