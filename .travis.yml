@@ -1,12 +1,16 @@
 language: node_js
 node_js:
-- 10
+  - 10
 notifications:
   email:
     recipients:
     - tracisnew@163.com
     on_success: change
     on_failure: always
+
+script:
+  - npm run lint
+  - npm test
 before_deploy:
   - npm run build
 deploy:
