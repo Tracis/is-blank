@@ -1,6 +1,6 @@
-export type IisBlank = (value?: any) => boolean;
+type IsBlank = (value?: any) => boolean;
 
-const isBlank: IisBlank = function(value: any) {
+const isBlank: IsBlank = function(value: any) {
   const valueType = typeof value;
   if (value === undefined || value === null) {
     return true;
