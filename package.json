@@ -1,6 +1,6 @@
 {
   "name": "@sedan-utils/is-blank",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "is-blank",
   "main": "lib/index.js",
   "module": "lib/index.js",
